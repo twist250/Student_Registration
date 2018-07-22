@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="461.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminWindowControl">
+   <children>
+      <Region layoutY="14.0" prefHeight="114.0" prefWidth="709.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="88.0" layoutY="46.0" prefHeight="33.0" prefWidth="193.0" text="ADMIN PORTAL">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="111.0" prefHeight="347.0" prefWidth="140.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="8.0" layoutY="65.0" spacing="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <JFXButton onAction="#addButtonPressed" text="ADD COURSE" />
+                  <JFXButton onAction="#viewButtonPressed" text="VIEW COURSES" />
+                  <JFXButton onAction="#modificationButtonPressed" text="MODIFICATION" />
+               </children>
+            </VBox>
+            <JFXButton layoutY="321.0" onAction="#logOutPressed" prefHeight="25.0" prefWidth="67.0" text="LogOut" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="addPane" layoutX="200.0" layoutY="114.0" prefHeight="347.0" prefWidth="565.0" style="-fx-background-color: #F4F4F4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="97.0" layoutY="22.0" prefHeight="39.0" prefWidth="111.0" text="Add Course:" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <GridPane layoutX="138.0" layoutY="84.0" prefHeight="152.0" prefWidth="246.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="88.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="205.0" minWidth="10.0" prefWidth="158.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="CODE" />
+                  <Label text="NAME" GridPane.rowIndex="1" />
+                  <Label text="CREDITS" GridPane.rowIndex="2" />
+                  <TextField fx:id="courseCodeText" style="-fx-background-radius: 5EM;" GridPane.columnIndex="1" />
+                  <TextField fx:id="courseNameText" style="-fx-background-radius: 5EM;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="courseCreditsText" style="-fx-background-radius: 5EM;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <JFXButton fx:id="addCourseButton" buttonType="RAISED" layoutX="402.0" layoutY="257.0" onAction="#addCoursePressed" prefHeight="33.0" prefWidth="85.0" text="ADD" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="viewPane" layoutX="144.0" layoutY="124.0" prefHeight="347.0" prefWidth="565.0" style="-fx-background-color: #F4F4F4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <TableView fx:id="viewCoursesTable" prefHeight="304.0" prefWidth="565.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="courseCheckViewColumn" prefWidth="75.0" />
+                <TableColumn fx:id="courseCodeViewColumn" prefWidth="75.0" text="COURSE CODE" />
+                  <TableColumn fx:id="courseNameViewColumn" prefWidth="75.0" text="COURSE NAME" />
+                  <TableColumn fx:id="creditsViewColumn" prefWidth="75.0" text="CREDITS" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <JFXButton layoutX="476.0" layoutY="308.0" onAction="#deletePressed" prefHeight="25.0" prefWidth="75.0" text="DELETE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="308.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="modifyPane" layoutX="154.0" layoutY="124.0" prefHeight="347.0" prefWidth="565.0" style="-fx-background-color: #F4F4F4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="144.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="114.0">
+         <children>
+            <JFXTextField fx:id="enteredIdText" layoutX="12.0" layoutY="8.0" onKeyPressed="#enteredIdTextPressed" prefHeight="25.0" prefWidth="193.0" promptText="Enter Id to Search" />
+            <TableView fx:id="tableSearchView" layoutX="11.0" layoutY="39.0" prefHeight="264.0" prefWidth="565.0" AnchorPane.rightAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="checkSearchColumn" prefWidth="75.0" />
+                <TableColumn fx:id="idSearchColumn" prefWidth="75.0" text="ID" />
+                  <TableColumn fx:id="codeSearchColumn" prefWidth="75.0" text="COURSE CODE" />
+                  <TableColumn fx:id="nameSearchColumn" prefWidth="75.0" text="COURSE NAME" />
+                  <TableColumn fx:id="creditsSearchColumn" prefWidth="75.0" text="CREDITS" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <HBox layoutX="365.0" layoutY="308.0" prefHeight="33.0" prefWidth="166.0" spacing="40.0">
+               <children>
+                  <JFXButton buttonType="RAISED" onAction="#modifyPressed" prefHeight="33.0" prefWidth="68.0" text="Modify" />
+                  <JFXButton buttonType="RAISED" onAction="#cancelPressed" prefHeight="33.0" prefWidth="75.0" text="Cancel" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

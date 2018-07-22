@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map>
+          <unit-entry name="hibernate.cfg.xml" value="794e7437-e15b-42a9-ad8f-dce96b1c9dd0" />
+        </datasource-map>
+        <naming-strategy-map />
+        <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="Hibernate 5.2.16-5.2.16" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.11" level="project" />
+    <orderEntry type="library" name="dist" level="project" />
+    <orderEntry type="library" name="jfoenix-8.0.4" level="project" />
+    <orderEntry type="library" exported="" name="slf4j-api-1.8.0-beta2" level="project" />
+    <orderEntry type="library" name="itextpdf-5.5.4" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/app/HibernateFiles/slf4j-log4j12-1.8.0-beta2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="slf4j-log4j12-1.8.0-beta2" level="project" />
+    <orderEntry type="library" name="log4j-api-2.11.0" level="project" />
+  </component>
+  <component name="POM File Configuration" pomFile="" />
+</module>
